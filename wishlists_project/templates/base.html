@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script >
+        function searchUser(event) {
+            event.preventDefault();
+            var username = document.getElementById('usernameInput').value;
+            var url = `http://127.0.0.1:8000/user/${username}/`;
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+<nav>
+    <ul>
+        {% for m in mainmenu %}
+            <li><a href="{% url m.url_name %}">{{m.title}}</a></li>
+        {% endfor %}
+        {% if user.is_authenticated %}
+            <li class="last"><a href="{% url 'users:profile' %}">{{user.username}}</a> | <a href="{% url 'users:logout' %}">Logout</a></li>
+        {% else %}
+            <li class="last"><a href="{% url 'users:login' %}">login</a> | <a href="{% url 'users:register' %}">Register</a></li>
+        {% endif %}
+        <li> <h1>Search user by login:</h1>
+            <form method="post" onsubmit="searchUser(event)">
+                {% csrf_token %}
+                <input type="text" id="usernameInput" placeholder="Enter username">
+                <button type="submit">Search</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+{% block content %}
+
+{% endblock content %}
+</body>
+</html>
