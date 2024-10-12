@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'wishlists',
+    'wishlists.apps.WishlistsConfig',
     'users',
 ]
 
@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'wishlists/static',
 ]
 
 # Default primary key field type

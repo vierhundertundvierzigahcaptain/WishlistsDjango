@@ -2,14 +2,14 @@
 
 {% block content %}
 
-    <h1>Your Wishlist</h1>
-    <a href="{% url 'wishlists:wishlist_item_create' %}">Add Item</a>
-    <ul>
+    <h1 class="main-header"><span id="main-header-username">Your</span> Wishlist</h1>
+    <p id="add-item-button"><a href="{% url 'wishlists:wishlist_item_create' %}">Add Item</a></p>
+    <ul class="wishlist">
         {% for item in items %}
-            <li>
-                {{ item.item_name }}
-                <a href="{% url 'wishlists:wishlist_item_update' item.pk %}">Edit</a>
-                <a href="{% url 'wishlists:wishlist_item_delete' item.pk %}">Delete</a>
+            <li class="wishlist-item">
+                <span id="wishlist-item-text">{{ item.item_name }}</span>
+                <a href="{% url 'wishlists:wishlist_item_update' item.pk %}" class="wishlist-item-button">Edit</a>
+                <a href="{% url 'wishlists:wishlist_item_delete' item.pk %}" class="wishlist-item-button">Delete</a>
             </li>
         {% endfor %}
     </ul>

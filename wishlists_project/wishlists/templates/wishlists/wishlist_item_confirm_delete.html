@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h1>Confirm Delete</h1>
+    <h1 class="main-header">Confirm Delete</h1>
     <p>Are you sure you want to delete "{{ item.item_name }}" from your wishlist?</p>
     <form method="post">
         {% csrf_token %}

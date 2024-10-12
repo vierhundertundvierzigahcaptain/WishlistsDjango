@@ -2,10 +2,12 @@
 
 {% block content %}
 
-    <h1>{{ user.username }}'s Wishlist</h1>
-    <ul>
+    <h1 class="main-header"><span id="main-header-username">{{ target_user.username }}</span> Wishlist</h1>
+    <ul class="wishlist">
         {% for item in items %}
-            <li>{{ item.item_name }}</li>
+            <li class="wishlist-item">
+                <span id="wishlist-item-text">{{ item.item_name }}</span>
+            </li>
         {% endfor %}
     </ul>
 

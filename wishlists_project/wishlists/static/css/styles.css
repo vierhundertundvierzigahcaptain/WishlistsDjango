@@ -1,18 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
-font-family: 'Arial';
+font-family: "Roboto", sans-serif;
 margin: 0;
-padding: 5px;
+padding: 0;
+}
+
+body {
+background-color: #323232;
+color: #EEEEEE;
+}
+
+nav {
+background-color: #212121;
+}
+
+#nav-inner {
+padding: 1% 0;
+margin: 0 1.5%
 }
 
 a {
-	color: #0059b2;
+	color: #14FFEC;
 	text-decoration: none;
+	transition: 0.1s;
 }
 a:hover {
-	color: #CC0000;
-	text-decoration: underline;
+	color: #00ADB5;
+}
+
+button {
+padding: 5px 7px;
+background-color: #323232;
+border: 1px solid #14FFEC;
+border-radius: 5px;
+font-size: 16px;
+font-weight: 600;
+color: #EEEEEE;
+transition: 0.1s;
+}
+
+button:hover {
+border: 1px solid #00ADB5;
 }
 
 ul {
 list-style: none;
+}
+
+nav ul {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+text-align: center;
+}
+
+.menu-link a {
+padding: 5px 7px;
+background-color: #323232;
+border: 1px solid #14FFEC;
+border-radius: 5px;
+transition: 0.1s;
+}
+
+.menu-link a:hover {
+border: 1px solid #00ADB5;
+}
+
+#search {
+margin: 0 auto;
+}
+
+#search-input {
+width: 150px;
+height: 25px;
+font-size: 16px;
+text-align: center;
+}
+
+.main-header {
+text-align: center;
+margin: 10px 0 20px 0;
+}
+
+#main-header-username {
+color: #14FFEC;
+}
+
+#add-item-button {
+text-align: center;
+margin-bottom: 22px;
+}
+
+#add-item-button a {
+padding: 5px 7px;
+border: 3px solid #14FFEC;
+border-radius: 5px;
+font-size: 30px;
+font-weight: 600;
+transition: 0.1s;
+}
+
+#add-item-button a:hover {
+border: 2px solid #00ADB5;
+}
+
+.wishlist {
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+
+.wishlist-item {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+#wishlist-item-text {
+padding: 5px 7px;
+margin-right: 5px;
+border-bottom: 1px solid #999;
+font-size: 30px;
+}
+
+.wishlist-item-button {
+padding: 5px 7px;
+margin-right: 5px;
+background-color: #323232;
+border: 1px solid #14FFEC;
+border-radius: 5px;
+font-size: 20px;
+transition: 0.1s;
+}
+
+.wishlist-item-button:hover {
+border: 1px solid #00ADB5;
 }
